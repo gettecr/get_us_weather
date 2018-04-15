@@ -14,7 +14,7 @@ import os
 
 def scrape_station(station, begin_date, end_date):
     current_date = datetime.strptime(begin_date, "%Y-%m-%d")
-    end_date = datetime.strptime(end_date, "%Y-%m-%d")
+    end_date = datetime.strptime(end_date, "%Y-%m-%d")+timedelta(days=1) #add one to make loop end on the end date
     '''
     This function scrapes the weather data web pages from wunderground.com
     for the station you provide it.

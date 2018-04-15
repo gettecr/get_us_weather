@@ -115,7 +115,7 @@ def parse_station(station, current_date, end_date, out_file):
 
 def parse(stations, begin_date, end_date):
     current_date = datetime.strptime(begin_date, "%Y-%m-%d")
-    end_date = datetime.strptime(end_date, "%Y-%m-%d")
+    end_date = datetime.strptime(end_date, "%Y-%m-%d")+timedelta(days=1) #add one to make loop end on the end date
     
     with open('weather_data/wund/{}-{}-{}-{}-{}-{}.csv'.format(current_date.year, current_date.month, current_date.day, end_date.year, end_date.month, end_date.day), 'w') as out_file:
         out_file.write('date,station,actual_mean_temp,actual_min_temp,actual_max_temp,'
