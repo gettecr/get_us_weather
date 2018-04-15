@@ -17,7 +17,7 @@ def get_weather(locationid, begin_date, end_date, mytoken):
     token = {'token': mytoken}
 
     #passing as string instead of dict because NOAA API does not like percent encoding
-    params = 'datasetid=GHCND'+'&locationid='+str(locationid)+'&startdate='+str(begin_date)+'&enddate='+str(end_date)+'&limit=25'+'&units=standard'
+    params = 'datasetid=GHCND'+'&locationid='+str(locationid)+'&startdate='+str(begin_date)+'&enddate='+str(end_date)+'&limit=1000'+'&units=standard'
                      
     base_url = 'https://www.ncdc.noaa.gov/cdo-web/api/v2/data'
     
