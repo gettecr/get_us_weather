@@ -3,8 +3,9 @@ Get Weather Data
 
 **WORK IN PROGRESS** 
 To Do:
-- [ ]  Finish scripts to retrieve weather data from NOAA or Wunderground (using API)
-- [ ]  Modify make_weather to include new script 
+- [ x]  Finish scripts to retrieve weather data from NOAA or Wunderground (using API)
+- [ x]  Modify make_weather to include new script
+- [ ] Add description and details to README
 
 Project Organization
 ------------
