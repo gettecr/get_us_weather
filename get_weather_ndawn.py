@@ -1,9 +1,12 @@
-#Script uses API requests to get historical weather data from all available weather stations
-#from ndawn stations in North Dakota
-#Not intended to get data from other regions
-#This script functions in tandem with make_weather.py, however if run from the
-#command line it will retrieve yesterday's weather data for all available stations
+'''
+Script uses API requests to get historical weather data from all available weather stations
+from ndawn stations in North Dakota
+Not intended to get data from other regions
+This script functions in tandem with make_weather.py, however if run from the
+command line it will retrieve yesterday's weather data for all available stations
 
+Author: Cody R. Gette
+'''
 
 import requests
 import datetime

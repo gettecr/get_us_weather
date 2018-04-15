@@ -1,11 +1,11 @@
-
-# coding: utf-8
-#Modified from wunderground_scraper.py from fivethirtyeight.com
-#forked from https://github.com/fivethirtyeight/data/tree/master/us-weather-history
-#Scrapes wunderground weather data from specified weather stations
-#Modifications made can be found in the README.md file on github
-#This script functions with make_weather.py and wunderground_parser_nd.py and does nothing if run from the 
-#command line
+'''
+Modified from wunderground_scraper.py from fivethirtyeight.com
+forked from https://github.com/fivethirtyeight/data/tree/master/us-weather-history
+Scrapes wunderground weather data from specified weather stations
+Modifications made can be found in the README.md file on github
+This script functions with make_weather.py and wunderground_parser_nd.py and does nothing if run from the 
+command line
+'''
 
 from datetime import datetime, timedelta
 from urllib.request import urlopen

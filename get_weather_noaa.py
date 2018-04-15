@@ -1,8 +1,10 @@
-#Script uses API requests to get historical weather data from NOAA stations
-#Can be modified to get data from other regions
-#This script functions in tandem with make_weather.py, however if run from the
-#command line it will retrieve this day last year's weather data for given stations
+'''Script uses API requests to get historical weather data from NOAA stations
+Can be modified to get data from other regions
+This script functions in tandem with make_weather.py, however if run from the
+command line it will retrieve this day last year's weather data for given stations
 
+Author: Cody R. Gette
+'''
 
 import requests
 import datetime

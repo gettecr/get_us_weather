@@ -1,4 +1,17 @@
-import numpy as np
+'''
+Script retrieves historical US weather data from one of two website
+Wunderground retrieval possible without API
+NOAA data requires first going to noaa.gov and getting an api
+
+Additionally, NDAWN data can be used to retrieve weather data from north dakota stations (only north dakota is available)
+
+Wunderground scraper and parser are modified scripts from fivethirtyeight.com
+-forked from https://github.com/fivethirtyeight/data/tree/master/us-weather-history
+
+NDAWN and NOAA scripts are OC: Author Cody R. Gette
+
+'''
+
 import pandas as pd
 import get_weather_ndawn as nd
 import get_weather_noaa as noaa
@@ -7,12 +20,14 @@ import wunderground_scraper_nd as wus
 import os
 import sys
 
-##Edit the variables here##
+'''
+Edit the variables here
     
-#choose noaa, ndawn, or wund for "weather"
-#noaa gets weather from noaa.gov
-#wund gets weather from wunderground.com
-#ndawn gets weather from ndawn.ndsu.nodak.edu
+choose noaa, ndawn, or wund for "weather"
+noaa gets weather from noaa.gov
+wund gets weather from wunderground.com
+ndawn gets weather from ndawn.ndsu.nodak.edu
+'''
 
 weather = 'wund'
     
@@ -24,15 +39,18 @@ weather = 'wund'
 begin_date = '2018-01-01'
 end_date = '2018-01-01'
 
+'''
+You can look up your city's weather station by performing a search for
+it on wunderground.com then clicking on the "History" section.
+The 4-letter name of the station will appear on that page.
+'''
+
 stations = ["KBIS","KFAR", "KGFK", "KDVL", "KJMS", "KMOT", "KISN"] #stations in North Dakota. Required for Wunderground data
 locationid='FIPS:38' #location id for North Dakota. Required for NOAA data
 
-#API token from NOAA
+#You must first get an API token from NOAA. Visit https://www.ncdc.noaa.gov/cdo-web/webservices/v2#gettingStarted for details
 mytoken = ''
 
-
-##
-##
 
 
 def main():
@@ -46,7 +64,7 @@ def main():
     if not os.path.isdir('weather_data/noaa'):
         os.mkdir('weather_data/noaa')
     
-    #Choose which station to get data depending on parameters entered below
+    #Choose which station to get data depending on parameters entered above
     if weather == "ndawn":
         print('Retrieving weather from ndawn.ndsu.nodak.edu')
         stationnums = range(1,103)
