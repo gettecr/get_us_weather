@@ -1,0 +1,7 @@
+date,station,actual_mean_temp,actual_min_temp,actual_max_temp,average_min_temp,average_max_temp,record_min_temp,record_max_temp,record_min_temp_year,record_max_temp_year,actual_precipitation,average_precipitation,record_precipitation
+2018-2-1,KBIS,2,-6,9,4,25,-43,60,1887,1992,0.00,0.01,0.32
+2018-2-1,KFAR,-2,-7,3,1,20,-39,45,1996,1931,0.00,0.02,0.33
+2018-2-1,KGFK,-3,-9,3,-2,18,-40,42,1996,1991,0.00,0.01,0.20
+2018-2-1,KJMS,-2,-8,4,1,21,-40,56,1893,1992,0.00,0.01,0.30
+2018-2-1,KMOT,0,-8,7,5,22,-35,60,1917,1992,0.00,0.01,1.20
+2018-2-1,KISN,-2,-10,5,2,24,-37,55,1917,1992,0.00,0.01,0.34

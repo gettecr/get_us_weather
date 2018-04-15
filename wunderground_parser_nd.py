@@ -30,7 +30,7 @@ def parse_station(station, current_date, end_date, out_file):
         try_again = False
         already_tried = False
 
-        with open('{}/{}-{}-{}.html'.format(station,
+        with open('wund_html/{}/{}-{}-{}.html'.format(station,
                                                 current_date.year,
                                                 current_date.month,
                                                 current_date.day)) as in_file:
@@ -97,7 +97,7 @@ def parse_station(station, current_date, end_date, out_file):
                                                          current_date.day)
             html = urlopen(formatted_lookup_URL).read().decode('utf-8')
 
-            out_file_name = '{}/{}-{}-{}.html'.format(station,
+            out_file_name = 'wund_html/{}/{}-{}-{}.html'.format(station,
                                                           current_date.year,
                                                           current_date.month,
                                                           current_date.day)

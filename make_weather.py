@@ -36,8 +36,8 @@ weather = 'wund'
 #NOAA and Wunderground are approx 1890 (or so). Check their respective websites for earliest data
 
 #dates use fmt YYYY-mm-dd
-begin_date = '2018-01-01'
-end_date = '2018-01-01'
+begin_date = '2018-02-01'
+end_date = '2018-02-01'
 
 '''
 You can look up your city's weather station by performing a search for
@@ -72,7 +72,6 @@ def main():
         df.to_csv("./weather_data/ndawn/"+begin_date+"-"+end_date+".csv", encoding = "utf-8",index=False)
     elif weather == "wund":
         print('Retrieving weather from Wunderground')
-        print(str(stations[1]))
         wus.scrape(stations, begin_date, end_date)
         wup.parse(stations, begin_date, end_date)
     elif weather == "noaa":

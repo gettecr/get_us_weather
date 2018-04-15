@@ -24,8 +24,10 @@ def scrape_station(station, begin_date, end_date):
     The 4-letter name of the station will appear on that page.
     '''
     # Make sure a directory exists for the station web pages
-    if not os.path.isdir(station):
-        os.mkdir(station)
+    if not os.path.isdir("wund_html"):
+        os.mkdir('wund_html')
+    if not os.path.isdir('wund_html/'+station):
+        os.mkdir('wund_html/'+station)
 
         # Use .format(station, YYYY, M, D)
     lookup_URL = 'http://www.wunderground.com/history/airport/{}/{}/{}/{}/DailyHistory.html'
@@ -42,7 +44,7 @@ def scrape_station(station, begin_date, end_date):
                                                  current_date.day)
         html = urlopen(formatted_lookup_URL).read().decode('utf-8')
 
-        out_file_name = '{}/{}-{}-{}.html'.format(station, current_date.year,
+        out_file_name = 'wund_html/{}/{}-{}-{}.html'.format(station, current_date.year,
                                                   current_date.month,
                                                   current_date.day)
 
