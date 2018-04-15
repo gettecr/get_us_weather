@@ -5,6 +5,7 @@ import get_weather_noaa as noaa
 import wunderground_parser_nd as wup
 import wunderground_scraper_nd as wus
 import os
+import sys
 
 ##Edit the variables here##
     
@@ -13,7 +14,7 @@ import os
 #wund gets weather from wunderground.com
 #ndawn gets weather from ndawn.ndsu.nodak.edu
 
-weather = 'ndawn'
+weather = 'wund'
     
 #Edit begining and end dates for span of weather data
 #ndawn exists from approx 1993 to present
@@ -58,6 +59,9 @@ def main():
         wup.parse(stations, begin_date, end_date)
     elif weather == "noaa":
         print('Retrieving weather from NOAA')
+        if mytoken =='':
+            sys.exit('Missing API token. You must provide your unique token!')
+            
         df= noaa.make_weather(locationid, begin_date,end_date, mytoken)
         df.to_csv("./weather_data/noaa/"+begin_date+"-"+end_date+".csv", encoding = "utf-8",index=False)
     else:
