@@ -67,7 +67,7 @@ def get_station_info(locationid, mytoken):
 if __name__ == '__main__':
 
     #If running script directly from command line, just retrieve this day last year's weather
-    #This can be modified to replace 'yesterday' with any date with the format 'YYYY-mm-dd'
+    #This can be modified to replace 'lastyear' with any date with the format 'YYYY-mm-dd'
 
     #Put your API token from NOAA here
     mytoken = '***REMOVED***'
