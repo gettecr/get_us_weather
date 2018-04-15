@@ -63,24 +63,11 @@ def get_station_info(locationid, mytoken):
     #Catch all exceptions for a bad request or missing data
     except:
         print("Error converting station data to dataframe. Missing data?")
- 
-if __name__ == '__main__':
 
-    #If running script directly from command line, just retrieve this day last year's weather
-    #This can be modified to replace 'lastyear' with any date with the format 'YYYY-mm-dd'
 
-    #Put your API token from NOAA here
-    mytoken = ''
+def make_weather(locationid, begin_date, end_date, mytoken):
 
-    if mytoken == '':
-        sys.exit('Missing API token. Open get_weather_noaa and provide your unique token!')
-        
-    #Location key for the region you are interested in (can be found on NOAA or requested as a different API as well)
-    locationid = 'FIPS:38' #location id for North Dakota
-
-    
-    lastyear = datetime.datetime.now()-datetime.timedelta(days=365)
-    df_weather =  get_weather(locationid, lastyear.strftime("%Y-%m-%d"), lastyear.strftime("%Y-%m-%d"), mytoken)
+    df_weather =  get_weather(locationid, begin_date, end_date, mytoken)
     df_stations = get_station_info(locationid, mytoken)
     try:
         df = df_weather.merge(df_stations, left_on = 'station', right_on = 'id', how='inner')
@@ -96,9 +83,36 @@ if __name__ == '__main__':
         weath_miss_count = len(weather_ismissing['id'].unique())
         if weath_miss_count != 0:
             print("Missing weather data for "+str(weath_miss_count)+" stations")
+        return df
         
-        #save as flattened csv
-        df.to_csv('./weather_data/weather_lastyear_noaa.csv', encoding='utf-8', index=False)
     except:
         print('An error occured. Unable to generate weather data.')
+ 
+if __name__ == '__main__':
+
+    #If running script directly from command line, just retrieve this day last year's weather
+    #This can be modified to replace 'lastyear' with any date with the format 'YYYY-mm-dd'
+
+    #Put your API token from NOAA here
+    mytoken = ''
+
+    if mytoken == '':
+        sys.exit('Missing API token. Open get_weather_noaa and provide your unique token!')
         
+    #Location key for the region you are interested in (can be found on NOAA or requested as a different API as well)
+    locationid = 'FIPS:38' #location id for North Dakota
+
+   
+    lastyear = datetime.datetime.now()-datetime.timedelta(days=365)
+
+    #Modify begin_date and end_date with format "YYYY-mm-dd"
+    #begin_date = 'YYYY-mm-dd' #uncomment this line and replace date with your own for testing
+    #end_date = 'YYYY-mm-dd' #this line too
+    
+    begin_date = lastyear.strftime("%Y-%m-%d")
+    end_date = lastyear.strftime("%Y-%m-%d")
+
+    df = make_weather(locationid, begin_date, end_date, mytoken)
+        
+    #save as flattened csv
+    df.to_csv('./weather_data/weather_lastyear_noaa.csv', encoding='utf-8', index=False)
