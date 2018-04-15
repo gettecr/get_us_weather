@@ -70,7 +70,7 @@ if __name__ == '__main__':
     #This can be modified to replace 'lastyear' with any date with the format 'YYYY-mm-dd'
 
     #Put your API token from NOAA here
-    mytoken = '***REMOVED***'
+    mytoken = ''
 
     if mytoken == '':
         sys.exit('Missing API token. Open get_weather_noaa and provide your unique token!')
