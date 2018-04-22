@@ -47,7 +47,8 @@ Project Organization
     ├── wunderground_parser_nd.py  	   <- parses .html weather data from wunderground
     ├── wunderground_scraper_nd.py	   <- scrapes wunderground for .html weather data
     ├── get_weather_ndawn.py		   <- requests data from ndawn.ndsu.nodak.edu via API
-    ├── weather_data
+	├── get_weather_noaa.py		   <- requests data from noaa.gov via API
+	├── weather_data
     |	├── ndawn			   <- contains .csv data from ndawn
     |	├── noaa			   <- contains .csv data from noaa
     |	├── wund 			   <- contains .csv data from wunderground
