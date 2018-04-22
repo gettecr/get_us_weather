@@ -12,10 +12,9 @@ Getting Started
 
 Clone the repo and navigate to the `make_weather.py` file. Open the
 file and edit the
-`weather`
-`begin_date`
+`weather`,
+`begin_date`, and
 `end_date`
-
 variables. The `weather` variable can be `noaa` for retrieving data
 from NOAA.gov, `wund` for wunderground data, or `ndawn` for NDAWN
 data. The begin and end dates are the dates between which you want the
@@ -33,7 +32,9 @@ You need to get a unique API key from NOAA and paste it in `mytoken =
 you want to sample. For example `FIPS:38` is the location id for North Dakota.
 
 Once you have provided the above information, run
->make_weather.py
+
+`make_weather.py`
+
 and it will retrieve the data.
 
 
