@@ -51,7 +51,7 @@ Project Organization
     |	├── ndawn			   <- contains .csv data from ndawn
     |	├── noaa			   <- contains .csv data from noaa
     |	├── wund 			   <- contains .csv data from wunderground
-    ├──{station}			   <- .html data from wunderground for each station
+  
 
 --------
 
